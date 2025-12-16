@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>De lütte Moehl – Teaser</title>
+  <style>
+    :root {
+      --sand: #E9E3D7;
+      --oat: #F6F2EA;
+      --slate: #2E3440;
+      --pine: #1F3A34;
+      --fog: #A7B1B7;
+      --gold: #C8A86B;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--slate);
+      background: radial-gradient(1200px 600px at 20% 10%, var(--oat), var(--sand));
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 56px 20px;
+    }
+
+    .card {
+      border: 1px solid rgba(46, 52, 64, .12);
+      background: rgba(246, 242, 234, .7);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 12px 40px rgba(46, 52, 64, .10);
+      backdrop-filter: blur(6px);
+    }
+
+    header {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 56px);
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+
+    .tagline {
+      margin: 10px 0 0;
+      color: rgba(46, 52, 64, .75);
+      font-size: 16px;
+      max-width: 55ch;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(31, 58, 52, .18);
+      background: rgba(31, 58, 52, .06);
+      color: var(--pine);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(200, 168, 107, .18);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 820px) {
+      .grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .hero {
+      border-radius: 18px;
+      min-height: 260px;
+      background:
+        linear-gradient(135deg, rgba(31, 58, 52, .35), rgba(46, 52, 64, .10)),
+        url("assets/haus1.jpg");
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(46, 52, 64, .12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(700px 320px at 20% 20%, rgba(246, 242, 234, .25), transparent 60%);
+      pointer-events: none;
+    }
+
+    .panel {
+      border-radius: 18px;
+      border: 1px solid rgba(46, 52, 64, .12);
+      background: rgba(246, 242, 234, .65);
+      padding: 18px;
+    }
+
+    .kicker {
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: 12px;
+      color: rgba(46, 52, 64, .65);
+      margin: 2px 0 10px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+      color: rgba(46, 52, 64, .78)
+    }
+
+    li {
+      margin: 8px 0
+    }
+
+    .cta {
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    a.btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 14px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid rgba(46, 52, 64, .12);
+    }
+
+    .primary {
+      background: var(--pine);
+      color: var(--oat);
+      box-shadow: 0 10px 28px rgba(31, 58, 52, .20);
+    }
+
+    .ghost {
+      background: rgba(246, 242, 234, .35);
+      color: var(--slate);
+    }
+
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 820px) {
+      .palette {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    .swatch {
+      border-radius: 14px;
+      border: 1px solid rgba(46, 52, 64, .12);
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .swatch .color {
+      height: 56px
+    }
+
+    .swatch .meta {
+      padding: 10px 10px 12px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      color: rgba(46, 52, 64, .75);
+    }
+
+    footer {
+      margin-top: 16px;
+      color: rgba(46, 52, 64, .65);
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <div>
+          <h1>De lütte Moehl</h1>
+          <p class="hero-sub">
+            Nordische Ruhe am eigenen Badeteich. Die Hundies sind auch willkommen!
+          </p>
+        </div>
+        <div class="badge"><span class="dot"></span> Direkt buchen = bester Preis</div>
+      </header>
+
+      <div class="grid">
+        <div class="hero" aria-label="Stimmungsbild"></div>
+
+        <div class="panel">
+          <div class="kicker">Warum eigene Website?</div>
+          <ul>
+            <li><strong>Mehr Vertrauen:</strong> Gäste googeln – wir wirken sofort seriös.</li>
+            <li><strong>Mehr Marge:</strong> Direktbuchung spart Plattform-Provision.</li>
+            <li><strong>Mehr Kontrolle:</strong> Bilder, Texte, Stil – alles auf Premium.</li>
+          </ul>
+
+          <div class="cta">
+            <a class="btn primary" href="#"
+              onclick="alert('Demo: Anfrageformular kommt später :)');return false;">Verfügbarkeit anfragen</a>
+            <a class="btn ghost" href="#" onclick="alert('Demo: Link zu Booking/Airbnb möglich.');return false;">Auf
+              Booking ansehen</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kicker" style="margin-top:18px;">Farbpalette (Nordisch-modern)</div>
+      <div class="palette">
+        <div class="swatch">
+          <div class="color" style="background:var(--oat)"></div>
+          <div class="meta">Oat #F6F2EA</div>
+        </div>
+        <div class="swatch">
+          <div class="color" style="background:var(--sand)"></div>
+          <div class="meta">Sand #E9E3D7</div>
+        </div>
+        <div class="swatch">
+          <div class="color" style="background:var(--slate)"></div>
+          <div class="meta">Slate #2E3440</div>
+        </div>
+        <div class="swatch">
+          <div class="color" style="background:var(--pine)"></div>
+          <div class="meta">Pine #1F3A34</div>
+        </div>
+        <div class="swatch">
+          <div class="color" style="background:var(--fog)"></div>
+          <div class="meta">Fog #A7B1B7</div>
+        </div>
+        <div class="swatch">
+          <div class="color" style="background:var(--gold)"></div>
+          <div class="meta">Gold #C8A86B</div>
+        </div>
+      </div>
+
+      <footer>
+        Teaser-Layout: ruhig, hochwertig, „Boutique“-Look. Wenn du willst, setze ich das als echte Website um – mit
+        Fotos, Lage, Ausstattung, Direktanfrage & DSGVO.
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>
