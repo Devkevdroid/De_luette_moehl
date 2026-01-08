@@ -40,7 +40,7 @@
   height: 48px;
   flex-shrink: 0;
 
-  background-image: url("/favicon.svg"); 
+  background-image: url("favicon.svg"); 
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -109,7 +109,7 @@
 
 .panel,
 .fact-card,
-.gallery-item,
+.gallery-item reveal,
 .faq-item,
 .form,
 .contact-panel{
@@ -332,20 +332,24 @@
    Gallery
    ========================= */
 .gallery-grid{
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
 }
 
 .gallery-item{
-  overflow:hidden;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
   background: color-mix(in srgb, var(--oat) 78%, transparent);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--slate) 8%, transparent);
 }
 
 .gallery-item img{
   width: 100%;
-  height: 240px; /* mobile */
-  display:block;
+  height: 240px;
+  display: block;
   object-fit: cover;
   object-position: center;
 }
@@ -354,7 +358,7 @@
   margin: 0;
   padding: 10px 12px 12px;
   font-size: 0.9rem;
-  color: var(--muted);
+  color: color-mix(in srgb, var(--slate) 70%, transparent);
 }
 
 /* =========================
@@ -481,7 +485,6 @@
 
 .contact-panel{ padding: 16px; }
 
-/* your HTML uses <dl class="contact-list"> with .contact-item children */
 .contact-item{
   display:grid;
   grid-template-columns: 96px 1fr;
@@ -526,6 +529,45 @@
   color: color-mix(in srgb, var(--slate) 80%, transparent);
 }
 .footer-links a:hover{ color: var(--slate); }
+
+/* =========================
+   Scroll Reveals
+   ========================= */
+
+/* Default: sichtbar (falls JS blockiert) */
+.reveal{
+  opacity: 1;
+  transform: none;
+}
+
+/* Nur wenn JS aktiv ist, werden Elemente animiert */
+.js .reveal{
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 520ms ease, transform 520ms ease;
+  will-change: opacity, transform;
+}
+
+.js .reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gallery: KEIN Opacity-Fade (sonst "lädt langsam"), nur Reveal/Clip */
+.js .gallery .reveal{
+  opacity: 1; /* override */
+  transform: translateY(10px);
+  clip-path: inset(18% 0 0 0 round 14px);
+  transition:
+    transform 520ms cubic-bezier(.22,1,.36,1),
+    clip-path 520ms cubic-bezier(.22,1,.36,1);
+}
+
+.js .gallery .reveal.is-visible{
+  transform: translateY(0);
+  clip-path: inset(0 0 0 0 round 14px);
+}
+
 
 /* =========================
    TABLET (>=600px)
@@ -602,3 +644,12 @@
    Small QoL
    ========================= */
 .section-head p:last-child{ margin-bottom: 0; }
+@media (prefers-reduced-motion: reduce){
+  .js .reveal,
+  .js .gallery .reveal{
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+    transition: none;
+  }
+}
