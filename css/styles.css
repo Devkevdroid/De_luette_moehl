@@ -27,21 +27,29 @@
 }
 
 .brand{
-  display:inline-flex;
-  align-items:center;
-  gap: 10px;
-  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   text-decoration: none;
+  color: inherit;
 }
 .brand:hover{ text-decoration:none; }
 
 .brand-mark{
-  width: 34px;
-  height: 34px;
-  border-radius: 12px;
-  border: 1px solid color-mix(in srgb, var(--pine) 18%, transparent);
-  background: color-mix(in srgb, var(--pine) 8%, transparent);
-  box-shadow: 0 8px 20px color-mix(in srgb, var(--slate) 10%, transparent);
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+
+  background-image: url("/favicon.svg"); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.brand-name{
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .nav-list{
@@ -261,40 +269,61 @@
   background: color-mix(in srgb, var(--oat) 78%, transparent);
 }
 
-.facts .section-head{ margin-bottom: 22px; }
+.facts .section-head{
+  margin-bottom: 22px;
+}
 
 .facts-grid{
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
 }
 
-.fact-card{ padding: 16px; }
+/* Card */
+.fact-card{
+  padding: 16px;
+  color: var(--slate);
+}
 
+/* Label (ruhig, sekundär) */
 .fact-title{
   margin: 0 0 6px;
-  font-size: 0.9rem;
-  color: var(--muted);
-  font-weight: 850;
-  letter-spacing: 0.02em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fog);
 }
 
+/* Key value (dominant) */
 .fact-value{
   margin: 0 0 6px;
-  font-size: 1.35rem;
-  font-weight: 950;
+  font-size: 1.4rem;
+  font-weight: 750;
   letter-spacing: -0.01em;
   line-height: 1.15;
+  color: var(--slate);
 }
 
-/* keeps cards visually even */
+/* inline muted inside value (z.B. "pro Nacht", "Nächte") */
+.fact-value .muted{
+  font-size: 0.9rem;
+  font-weight: 450;
+  color: color-mix(in srgb, var(--slate) 65%, transparent);
+}
+
+/* Note (unterstützend, aber lesbar) */
 .fact-note{
   margin: 0;
   min-height: 1.2em; /* reserve one line */
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: color-mix(in srgb, var(--slate) 70%, transparent);
 }
 
+/* keep if used elsewhere */
 .details-grid{
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
 }
