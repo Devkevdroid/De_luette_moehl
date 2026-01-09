@@ -40,7 +40,7 @@
   height: 48px;
   flex-shrink: 0;
 
-  background-image: url("favicon.svg"); 
+  background-image: url("../favicon.svg"); 
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
